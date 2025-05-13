@@ -1,0 +1,19 @@
+Lora with Sensor Connection
+
+Sensor:-
+
+gnd-gnd
+echo-27
+trigger-13
+Vcc-Vin
+
+Lora:-
+
+gnd-gnd
+3.3v-3v3
+rst-14
+Di01-d2
+nss-d5
+mosi-d23
+miso-d19
+sck-22
