@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Aditya University Location</title>
+  <style>
+    iframe{
+        height: 640px;
+        width: 99.5%;
+    }
+
+    
+    body{
+        padding: 0;
+        margin: 0;
+    }
+    
+    nav{
+      display: flex;
+      gap: 10px;
+      padding-left: 72%;
+      background-color: yellow;
+      height: 70px;
+    }
+
+    .maa{
+      height: 40px;
+      width: 90px;
+      background-color: darkblue;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .maa:hover{
+      transform: scale(1.05);
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+
+    }
+
+    form{
+      padding-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <form action="analysis.html">
+        <input type="submit" value="Analysis" class="maa">
+    </form>
+
+    <form action="map.html">
+        <input type="submit" value="Map" class="maa">
+    </form>
+
+    <form action="feedback.html">
+        <input type="submit" value="FeedBack" class="maa">
+    </form>
+
+    <form action="Logout.html">
+        <input type="submit" value="Logout" class="maa">
+    </form>
+
+  </nav>
+
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3826.1343106257275!2d82.07179847475135!3d17.089933613653736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3782f54b6f9cf3%3A0x593beff3f404cc3e!2sAditya%20University%2C%20Surampalem!5e0!3m2!1sen!2sin!4v1716188103095!5m2!1sen!2sin"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Waste Management</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-image: url('bc.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+      width: 100vw;
+      font-family: Arial, sans-serif;
+    }
+
+    .main{
+        display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 90vh;
+    }
+
+    .first {
+      display: flex;
+      flex-direction: column;
+      width: 350px;
+      background-color: rgba(135, 206, 235, 0.5); 
+      padding: 50px;
+      border-radius: 10px;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      gap: 10px;
+    }
+
+    input[type="mail"],input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .log,.reg{
+        width: 250px;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+    }
+
+    .log,.reg {
+      background-color: #0077b6;
+      color: white;
+      cursor: pointer;
+    }
+
+    .log:hover{
+        background-color: #005f8a;
+    }
+
+    .reg:hover {
+      background-color: #005f8a;
+    }
+
+    a {
+      color: #004d66;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+    h2{
+        padding-bottom: 5px;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    nav {
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 15px;
+        text-align: center;
+    }
+
+    nav h1 {
+        color: white;
+        font-family: 'Georgia', serif;
+        font-size: 28px;
+    }
+
+  </style>
+</head>
+<body>
+
+    <nav>
+        <h1>Aditya University</h1>
+    </nav>
+
+    <div class="main">
+        <div class="first">
+            <form action="loginad.html">
+                <h2>Login Form</h2>
+            <input type="mail" name="usermail" id="usermail" placeholder="Enter your e-mail" required="required" /><br><br>
+            <input type="password" name="password" id="password" placeholder="Enter your password" required="required" /><br><br>
+                <input type="submit" value="Login" class="log" />
+            </form>
+            <a href="forgetad.html">Forget Password</a>
+                <form action="registerad.html">
+                <input type="submit" value="Register" class="reg" />
+            </form>
+        </div>
+   </div>
+</body>
+</html>
