@@ -33,6 +33,8 @@ void setup() {
 
   LoRa.setSyncWord(0xF3);  // Must match with receiver
   Serial.println("LoRa Transmitter Initialized!");
+
+  delay(3000);  // Give LoRa module time to stabilize
 }
 
 void loop() {
@@ -43,23 +45,26 @@ void loop() {
   delayMicroseconds(10);
   digitalWrite(trigPin, LOW);
 
-  long duration = pulseIn(echoPin, HIGH, 30000);
+  long duration = pulseIn(echoPin, HIGH, 30000); // timeout = 30 ms
   float distance = duration * SOUND_SPEED / 2;
 
-  // Print and send
-  if (distance > 2 && distance < 100) {
-    Serial.print("Distance: ");
-    Serial.print(distance);
-    Serial.println(" cm");
-
-    LoRa.beginPacket();
-    LoRa.print("Distance: ");
-    LoRa.print(distance);
-    LoRa.println(" cm");
-    LoRa.endPacket();
-  } else {
-    Serial.println("Out of range or no object detected");
+  // Validate reading
+  if (duration == 0 || distance < 2 || distance > 100) {
+    Serial.println("Invalid or no distance detected. Skipping send.");
+    delay(3000);
+    return;
   }
 
-  delay(1000);
+  // Prepare JSON only when valid
+  String jsonPayload = "{\"distance\": " + String(distance, 2) + "}";
+
+  // Send LoRa packet
+  LoRa.beginPacket();
+  LoRa.print(jsonPayload);
+  LoRa.endPacket();
+
+  Serial.print("Sent JSON over LoRa: ");
+  Serial.println(jsonPayload);
+
+  delay(3000);
 }
